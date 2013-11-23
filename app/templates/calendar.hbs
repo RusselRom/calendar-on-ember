@@ -1,0 +1,38 @@
+<table class="table table-striped table-bordered" style="width:400px;margin:0 auto;float:none;">
+    <tr>
+        <td colspan=7 style="text-align:center">
+            <div class="row-fluid">
+                <div class="span5" >
+                    {{#view App.PrevYearView class="action"}} &lt;&lt; {{/view}}
+                    <span style="margin:10px;">
+                            {{year}}
+                    </span>
+                    {{#view App.NextYearView class="action"}} &gt;&gt; {{/view}}
+                </div>
+                <div class="span2">
+                    {{#view App.TodayView class="action"}} Today {{/view}}
+                </div>                
+                <div class="span5 pull-right">
+                    {{#view App.PrevMonthView class="action"}} &lt;&lt; {{/view}}
+                    <span style="margin:10px;"> 
+                        {{mn month}}
+                    </span>
+                    {{#view App.NextMonthView class="action"}} &gt;&gt; {{/view}}
+                </div>
+            </div>
+        </td>
+    <tr>
+    <tr>
+        <td>Su</td><td>Mo</td><td>Tu</td><td>We</td><td>Th</td><td>Fr</td><td>Sa</td>
+    </tr>
+    {{#each week in getDaysMatrix}}
+        <tr>
+            {{#each day in week}}
+                <td {{action "selectDay" day.data}} {{bindAttr class="day.cssClass"}}> {{day.data}} </td> 
+            {{/each}}
+        </tr>
+    {{/each}}
+</table>
+{{outlet}}
+
+

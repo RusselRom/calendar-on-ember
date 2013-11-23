@@ -1,0 +1,21 @@
+@import url(bootstrap-sass/lib/bootstrap.css);
+/* Put your CSS here */
+/* line 4, ../../app/styles/style.scss */
+html, body {
+  margin: 30px 0;
+}
+
+.action {
+  cursor: pointer
+}
+
+table td.ember-view{
+    cursor: pointer
+}
+.current-day {
+  background: red !important
+}
+
+.selected-day {
+  background: #45A5DC !important
+}
